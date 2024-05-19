@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Textbox with Button</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="form-container">
+        <form action="/" method="post"> 
+            <input type="text" placeholder="Enter your text here" name="user_text">
+            <button type="submit">Submit</button>
+        </form>
+        <div class="result-container">
+            {% if Result is defined %}
+                <h2>Result:</h2>
+                {% if Result == 0 %}
+                    <p>Spam</p>
+                {% elif Result == 1 %}
+                    <p>Ham</p>
+                
+                {% endif %}
+            {% endif %}
+        </div>
+    </div>
+</body>
+</html>
